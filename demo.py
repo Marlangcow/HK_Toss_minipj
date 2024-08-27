@@ -8,11 +8,11 @@ import os
 
 # 데이터셋을 로컬에서 불러오기
 data_path = os.path.join("data", "demo_set.csv")
-font_path = os.path.join("data", "fonts", "malgun.ttf")
+# font_path = os.path.join("data", "fonts", "malgun.ttf")
 
-# 폰트 설정
-import matplotlib.pyplot as plt
-from matplotlib import font_manager, rc
+# # 폰트 설정
+# import matplotlib.pyplot as plt
+# from matplotlib import font_manager, rc
 
 font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
