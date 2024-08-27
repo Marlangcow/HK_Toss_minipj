@@ -4,17 +4,19 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib import font_manager, rc
 from datetime import datetime
+import os
 
-# 한글 폰트 설정
-plt.rcParams['axes.unicode_minus'] = False
-font_path = "C:/Windows/Fonts/malgun.ttf"  # Windows의 경우 Malgun Gothic 폰트
+# 폰트 파일 경로 설정
+font_path = os.path.join(os.path.dirname(__file__), "assets", "malgun.ttf")
 font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
 
 # 데이터셋을 로컬에서 불러오기
+data_path = os.path.join(os.path.dirname(__file__), "data", "demo_set.csv")
+
 @st.cache_data
 def load_data():
-    df = pd.read_csv("C:/Users/user/Downloads/HK_Toss_minipj/demo_set.csv")
+    df = pd.read_csv(data_path)
     return df
 
 # 데이터 로드
