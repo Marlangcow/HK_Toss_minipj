@@ -6,13 +6,16 @@ from matplotlib import font_manager, rc
 from datetime import datetime
 import os
 
-# 폰트 파일 경로 설정
-font_path = os.path.join(os.path.dirname(__file__), "assets", "malgun.ttf")
+# 데이터셋을 로컬에서 불러오기
+data_path = os.path.join("data", "demo_set.csv")
+font_path = os.path.join("data", "fonts", "malgun.ttf")
+
+# 폰트 설정
+import matplotlib.pyplot as plt
+from matplotlib import font_manager, rc
+
 font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font_name)
-
-# 데이터셋을 로컬에서 불러오기
-data_path = os.path.join(os.path.dirname(__file__), "data", "demo_set.csv")
 
 @st.cache_data
 def load_data():
